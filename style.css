@@ -1,0 +1,469 @@
+/* Import from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Bad+Script&family=Baloo+2&family=Bellefair&family=Bungee&family=Cantata+One&display=swap');
+
+/* Colors for different themes */
+:root {
+  --white: #fff;
+  --gray0: #f8f8f8;
+  --gray1: #dbe1e8;
+  --gray2: #b2becd;
+  --gray3: #6c7983;
+  --gray4: #454e56;
+  --gray5: #2a2e35;
+  --gray6: #12181b;
+
+  /* Bumbo */
+  --light-purple: #cdcaf4;
+  --extra-purple: #9487b5;
+  --dark-purple: #746fa8;
+  --red: #e25a66;
+  --blue: #4084ae;
+  --yellow: #fde6b9;
+  --light-yellow: #fff2da;
+  /* Nature */
+  --nature-green: #baebc6;
+  /* Blue */
+  --ocean-blue: #4084ae;
+}
+
+.light {
+  --bg: var(--gray0);
+  --btn: var(--gray0);
+  --btn-border: var(--gray5);
+  --btn-hover: var(--gray2);
+  --hero: var(--gray2);
+  --nav-bg: var(--gray1);
+  --nav-hover: var(--gray0);
+  --login-btn: var(--bg);
+  --logo: var(--white);
+  --signup-btn: var(--bg);
+  --small-section: var(--gray3);
+  --text: var(--gray6);
+}
+
+.dark {
+  --bg: var(--gray6);
+  --btn: var(--gray6);
+  --btn-border: var(--gray5);
+  --btn-hover: var(--gray3);
+  --hero: var(--gray4);
+  --nav-bg: var(--gray5);
+  --nav-hover: var(--gray6);
+  --login-btn: var(--bg);
+  --logo: var(--white);
+  --section-type-two: var(--gray4);
+  --signup-btn: var(--bg);
+  --small-section: var(--gray3);
+  --text: var(--gray0);
+  --theme-switcher: #2a2e35;
+}
+
+.bumbo {
+  --bg: var(--extra-purple);
+  --btn: var(--gray3);
+  --btn-border: var(--gray5);
+  --btn-hover: var(--gray2);
+  --nav-bg: var(--yellow);
+  --nav-hover: var(--light-yellow);
+  --login-btn: var(--blue);
+  --login-btn-text: var(--blue);
+  --signup-btn: var(--red);
+  --signup-btn-text: var(--red);
+  --text: var(--gray6);
+}
+
+.nature {
+  --bg: var(--gray0);
+  --btn: var(--gray3);
+  --btn-border: var(--gray5);
+  --btn-hover: var(--gray2);
+  --nav-bg: var(--gray2);
+  --text: var(--gray6);
+}
+
+.ocean {
+  --bg: var(--gray0);
+  --btn: var(--gray3);
+  --btn-border: var(--gray5);
+  --btn-hover: var(--gray2);
+  --nav-bg: var(--gray2);
+  --text: var(--gray6);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg) !important;
+  color: var(--text);
+  font-family: 'Baloo 2', sans-serif !important;
+  transition: background 500ms ease-in-out;
+}
+
+body::-webkit-scrollbar {
+  width: 0.25rem;
+}
+
+body::-webkit-scrollbar-track {
+  background: #1e1e24;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: #eee;
+}
+
+a {
+  color: currentColor;
+  text-decoration: none;
+}
+
+h1,
+h2,
+strong {
+  font-family: 'Cantata One', serif;
+}
+
+h3,
+.bellefair {
+  font-family: 'Bellefair', serif;
+}
+
+.logo-font {
+  font-family: 'Bungee', sans-serif;
+  color: var(--logo);
+}
+
+.container {
+  width: 85%;
+  margin: auto;
+}
+
+nav {
+  background: var(--nav-bg);
+}
+
+nav .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar-brand {
+  font-size: 1.5rem;
+  margin: 0.5rem;
+}
+
+.navbar-links {
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-nav {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  list-style-type: none;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+}
+
+.nav-item-link {
+  padding: 1rem;
+  display: block;
+  transition: 200ms ease background;
+}
+
+.nav-item-link:hover {
+  background: var(--nav-hover);
+}
+
+.has-dropdown {
+  position: relative;
+}
+
+.dropdown {
+  padding: 0;
+  position: absolute;
+  opacity: 0;
+  z-index: 2;
+  width: 100%;
+  height: 10rem;
+
+  background: var(--nav-bg);
+  box-shadow: 0px 10px 16px 0px rgba(0, 0, 0, 0.2);
+  border-bottom-right-radius: 8px;
+  border-bottom-left-radius: 8px;
+
+  list-style-type: none;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  transition: opacity 200ms ease-in;
+}
+
+.has-dropdown:focus-within .dropdown {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.dropdown-item {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 200ms ease-in-out;
+}
+
+.dropdown-item:hover {
+  background: var(--nav-hover);
+}
+
+.nav-btns {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.btn {
+  padding: 0.5rem 1rem;
+  background: var(--btn);
+  border: 1px var(--btn-border) solid;
+  transition: all 200ms ease-in;
+}
+
+.btn:hover {
+  background: var(--btn-hover);
+}
+
+#loginBtn {
+  background: var(--login-btn);
+  border: 1px var(--login-btn) solid;
+  border-radius: 5px;
+  color: var(--text);
+  margin: 0 1rem;
+}
+
+#loginBtn:hover {
+  background: var(--btn-hover);
+  color: var(--white);
+}
+
+#signupBtn {
+  border: 1px var(--bg) solid;
+  border-radius: 5px;
+  color: var(--text);
+  margin-right: 1rem;
+}
+
+#signupBtn:hover {
+  background: var(--btn-hover);
+  color: var(--white);
+}
+
+.toggle-menu-button {
+  position: absolute;
+  top: 0.75rem;
+  right: 1rem;
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 21px;
+}
+
+.toggle-menu-button .bar {
+  height: 3px;
+  width: 100%;
+  background-color: white;
+  border-radius: 10px;
+}
+
+.hero {
+  background: var(--hero);
+}
+
+.hero > .container > .hero-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5% 0;
+  flex-wrap: wrap-reverse;
+  color: var(--text);
+}
+
+.placeholder {
+  width: 300px;
+  height: 200px;
+  background: #2a2e35;
+}
+
+#learnBtn {
+  background: var(--btn);
+  color: var(--text);
+  border-radius: 6px;
+  border: 1px var(--btn-border) solid;
+  margin: 10px;
+  border: 0;
+}
+
+#learnBtn:hover {
+  background: var(--btn-hover);
+  color: var(--white);
+}
+
+.small-section {
+  color: var(--white);
+  text-align: center;
+  background-color: var(--small-section);
+  padding: 10px 0;
+}
+
+.small-section > .container > h3 {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.section {
+  padding: 3rem 0;
+}
+
+.section .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.section-type-one,
+.section-type-three {
+  background: var(--bg);
+}
+
+.section-type-two {
+  background: var(--section-type-two);
+}
+
+.section-type-three .container {
+  text-align: center;
+}
+
+/* < Tablets (768px) */
+@media screen and (max-width: 768px) {
+  /* Fix Navbar */
+  .toggle-menu-button {
+    display: flex;
+  }
+
+  .toggle-menu-button:active .navbar-links {
+    transform: scale(1);
+  }
+
+  .navbar {
+    height: 5.5vh;
+  }
+
+  .navbar-links {
+    transform: scale(0);
+    transition: transform 200ms ease-in;
+  }
+
+  .navbar .container {
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .navbar-nav,
+  .nav-links,
+  .nav-btns {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-links,
+  .navbar-links,
+  .nav-item,
+  .nav-btns {
+    width: 100%;
+    text-align: center;
+  }
+
+  #loginBtn,
+  #signupBtn {
+    padding: initial 2rem;
+  }
+
+  #loginBtn {
+    margin-left: 0;
+  }
+
+  .has-dropdown:hover .dropdown {
+    opacity: 0;
+  }
+}
+
+.theme-switcher {
+  width: 2.5rem;
+  height: 2.5rem;
+  background: var(--bg);
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  border: 2px white solid;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.has-dropup {
+  position: relative;
+  z-index: 2;
+}
+
+.has-dropup .dropup {
+  width: 3rem;
+  background: var(--theme-switcher);
+  padding: 0;
+  margin: 0.5rem -0.4rem;
+  position: absolute;
+  bottom: 100%;
+  border-radius: 25px;
+
+  list-style-type: none;
+  transition: all 200ms ease;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.dropup .dropup-item a::before {
+  content: ' ';
+  border: 2px solid white;
+  border-radius: 50%;
+  width: 2.5rem;
+  height: 2.5rem;
+  margin: 0.2rem 0.1rem;
+  display: none;
+  transition: opacity 500ms ease;
+}
+
+.theme-switcher:hover .dropup {
+  height: 10%;
+}
+
+.theme-switcher:hover .dropup-item > a {
+  display: block;
+}
